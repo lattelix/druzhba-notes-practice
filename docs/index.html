@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Презентация проекта Дружба Notes и сценарного юзабилити-тестирования." />
+    <link rel="icon" href="data:," />
+    <title>Дружба Notes - презентация проекта</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">Дружба Notes</a>
+      <nav aria-label="Разделы презентации">
+        <a href="#product">Продукт</a>
+        <a href="#method">Методика</a>
+        <a href="#results">Результаты</a>
+        <a href="#recommendations">Выводы</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero band">
+        <div class="wrap hero-layout">
+          <div>
+            <p class="eyebrow">Производственная практика</p>
+            <h1>Дружба Notes</h1>
+            <p class="lead">Небольшое приложение для рабочих заметок ИТ-отдела: создание, поиск, редактирование и удаление без лишних шагов.</p>
+            <div class="actions">
+              <a class="button primary" href="#results">Смотреть результаты</a>
+              <a class="button secondary" href="#product">О проекте</a>
+            </div>
+          </div>
+          <div class="app-preview" aria-label="Схематичное представление интерфейса приложения">
+            <div class="preview-toolbar"><span>Заметки</span><span class="preview-action">+</span></div>
+            <div class="preview-search">Поиск заметок</div>
+            <article><strong>Подготовить рабочие места</strong><small>Проверить учетные записи и сеть</small></article>
+            <article><strong>Резервное копирование</strong><small>Контрольная проверка перед сменой</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="product" class="band">
+        <div class="wrap">
+          <p class="eyebrow">Продукт</p>
+          <h2>Один понятный сценарий работы</h2>
+          <div class="feature-grid">
+            <article><span>01</span><h3>Создание</h3><p>Заголовок и текст заметки доступны на одном экране.</p></article>
+            <article><span>02</span><h3>Поиск</h3><p>Фильтрация по заголовку и содержанию без отдельной формы.</p></article>
+            <article><span>03</span><h3>Редактирование</h3><p>Изменения вносятся в том же интерфейсе, что и создание.</p></article>
+            <article><span>04</span><h3>Удаление</h3><p>Ненужную запись можно убрать из списка за одно действие.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="method" class="band soft">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">Методика</p>
+            <h2>Четыре задания без обучения</h2>
+            <p>Проверяется полный рабочий цикл: создать заметку, найти ее, изменить текст и удалить запись. Фиксируются успешность, время, ошибки и паузы.</p>
+          </div>
+          <ol class="steps">
+            <li><span>1</span>Создать заметку</li>
+            <li><span>2</span>Найти через поиск</li>
+            <li><span>3</span>Изменить и сохранить</li>
+            <li><span>4</span>Удалить запись</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="results" class="band">
+        <div class="wrap">
+          <p class="eyebrow">Сценарная оценка</p>
+          <h2>Результаты на трех профилях</h2>
+          <div class="metrics">
+            <article><strong>91,7%</strong><span>заданий без подсказок</span></article>
+            <article><strong>2:35</strong><span>среднее время</span></article>
+            <article><strong>0</strong><span>критических ошибок</span></article>
+          </div>
+          <div class="participants">
+            <article><h3>Уверенный пользователь</h3><p>4/4, 1:48. Проверял, сохранилось ли изменение.</p></article>
+            <article><h3>Офисный пользователь</h3><p>4/4, 2:36. Исправил формат даты после сообщения проверки.</p></article>
+            <article><h3>Менее опытный пользователь</h3><p>3/4 без подсказки, 3:21. Не сразу заметил поиск.</p></article>
+          </div>
+          <p class="disclosure">Показатели на этой странице относятся к сценарной оценке и должны быть заменены фактическими данными, если проводится исследование с реальными участниками.</p>
+        </div>
+      </section>
+
+      <section id="recommendations" class="band dark">
+        <div class="wrap">
+          <p class="eyebrow">Выводы</p>
+          <h2>Три приоритетные доработки</h2>
+          <div class="recommendations">
+            <article><span>01</span><p>Показывать подтверждение успешного сохранения.</p></article>
+            <article><span>02</span><p>Добавить выбор даты и времени вместо ручного формата.</p></article>
+            <article><span>03</span><p>Сделать поиск заметнее и добавить пустое состояние.</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="wrap"><span>Дружба Notes</span><span>Проект по производственной практике</span></div></footer>
+  </body>
+</html>

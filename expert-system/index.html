@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Прототип экспертной системы для оценки готовности IT-инфраструктуры детского лагеря."
+    />
+    <title>ДОЛ «Дружба»: проверка IT-инфраструктуры</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="shell header-inner">
+        <div>
+          <p class="eyebrow">ДОЛ «ДРУЖБА»</p>
+          <h1>Готовность IT-инфраструктуры</h1>
+          <p class="lead">
+            Экспертная система сопоставляет состояние рабочих мест, сети, резервного копирования
+            и защиты данных перед началом смены.
+          </p>
+        </div>
+        <div class="rule-badge" aria-label="Тип системы">
+          <span>Модель</span>
+          <strong>12 правил</strong>
+          <small>прямой вывод</small>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell layout">
+      <form id="assessment-form" class="panel" novalidate>
+        <div class="section-heading">
+          <span>01</span>
+          <div>
+            <h2>Исходные данные</h2>
+            <p>Укажите результаты технической проверки подразделения.</p>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <label class="field field-wide">
+            <span>Проверяемый объект</span>
+            <input id="object-name" name="objectName" value="IT-отдел, кабинет № 220" required />
+          </label>
+
+          <label class="field">
+            <span>Всего рабочих мест</span>
+            <input id="workstations-total" name="workstationsTotal" type="number" min="1" inputmode="numeric" value="18" required />
+          </label>
+
+          <label class="field">
+            <span>Исправных рабочих мест</span>
+            <input id="workstations-ready" name="workstationsReady" type="number" min="0" inputmode="numeric" value="18" required />
+          </label>
+
+          <label class="field">
+            <span>Всего сетевых узлов</span>
+            <input id="network-total" name="networkTotal" type="number" min="1" inputmode="numeric" value="8" required />
+          </label>
+
+          <label class="field">
+            <span>Работоспособных узлов</span>
+            <input id="network-ready" name="networkReady" type="number" min="0" inputmode="numeric" value="8" required />
+          </label>
+
+          <label class="field">
+            <span>Резервное копирование</span>
+            <select id="backup-status" name="backupStatus">
+              <option value="tested" selected>Копия создана и проверена</option>
+              <option value="configured">Настроено, проверка не выполнена</option>
+              <option value="missing">Не настроено</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Защита учетных записей</span>
+            <select id="security-status" name="securityStatus">
+              <option value="complete" selected>Пароли и роли проверены</option>
+              <option value="partial">Проверены частично</option>
+              <option value="missing">Контроль не выполнен</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="form-error" class="form-error" role="alert"></p>
+        <button class="primary-button" type="submit">Провести оценку</button>
+      </form>
+
+      <section id="result-panel" class="panel result-panel" aria-live="polite">
+        <div class="section-heading">
+          <span>02</span>
+          <div>
+            <h2>Заключение системы</h2>
+            <p>Результат появится после обработки исходных данных.</p>
+          </div>
+        </div>
+
+        <div id="empty-result" class="empty-result">
+          Заполните форму и запустите оценку. Система покажет готовность объекта и цепочку вывода.
+        </div>
+
+        <div id="assessment-result" class="hidden">
+          <div class="verdict-row">
+            <div>
+              <p class="result-label">Рекомендация</p>
+              <h3 id="verdict"></h3>
+              <p id="verdict-description" class="verdict-description"></p>
+            </div>
+            <div id="score" class="score"></div>
+          </div>
+
+          <dl class="metrics">
+            <div>
+              <dt>Готовность рабочих мест</dt>
+              <dd id="workstations-percent"></dd>
+            </div>
+            <div>
+              <dt>Готовность сети</dt>
+              <dd id="network-percent"></dd>
+            </div>
+            <div>
+              <dt>Критических рисков</dt>
+              <dd id="critical-risks"></dd>
+            </div>
+          </dl>
+
+          <div class="reasoning-block">
+            <h4>Сработавшие правила</h4>
+            <ol id="reasoning-log"></ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell footer">
+      Учебный прототип. Итоговое решение принимает ответственный сотрудник IT-отдела.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
